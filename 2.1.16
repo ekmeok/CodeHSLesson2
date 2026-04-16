@@ -1,0 +1,26 @@
+function start() {
+    // Move across the entire hall regardless of world size
+    while (frontIsClear()) {
+        checkForSnake();
+        move();
+    }
+    // Check the very last square
+    checkForSnake();
+}
+
+function checkForSnake() {
+    // If the square is black, Karel is scared!
+    if (colorIs(Color.black)) {
+        jumpUpAndDown();
+        paint(Color.orange);
+    }
+}
+
+function jumpUpAndDown() {
+    turnLeft();
+    move();
+    turnAround();
+    move();
+    // Face East again to continue across the hall
+    turnLeft(); 
+}
