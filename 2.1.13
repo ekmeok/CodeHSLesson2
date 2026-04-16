@@ -1,15 +1,12 @@
 function start() {
-    // A while loop ensures this works in both short and long worlds
     while (frontIsClear()) {
         checkSquare();
         move();
     }
-    // Check the very last square after the loop finishes
     checkSquare();
 }
 
 function checkSquare() {
-    // The "Nested If": We only check for a ball IF we are on purple
     if (colorIs(Color.purple)) {
         if (ballsPresent()) {
             takeBall();
