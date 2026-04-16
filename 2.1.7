@@ -1,0 +1,25 @@
+function start() {
+
+    while (frontIsClear()) {
+        checkColor();
+        move();
+    }
+    
+ 
+    checkColor();
+}
+
+
+function checkColor() {
+    if (colorIs(Color.yellow)) {
+       
+        turnLeft();
+        turnRight();
+    } else if (colorIs(Color.purple)) {
+       
+        paint(Color.black);
+    } else if (colorIs(Color.gray)) {
+        
+        paint(Color.purple);
+    }
+}
